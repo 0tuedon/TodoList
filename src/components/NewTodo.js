@@ -31,13 +31,12 @@ function NewTodo(props) {
                Back 
             </Link>
         <div className="card-container">
-           
             <div class="container">
                 <form id="contact" onSubmit={submitData}>
                     <h3>Todos</h3>
                     <h4>Add your Todos List on the Form below</h4>
                     <fieldset>
-                        <input placeholder="Todos" name="title" type="text" tabIndex="1" required autoFocus onChange={onChangeInputs} />
+                        <input placeholder="Todos" name="title" maxLength="20" type="text" tabIndex="1" required autoFocus onChange={onChangeInputs} />
                     </fieldset>
                   
                     <fieldset>

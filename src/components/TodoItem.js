@@ -12,7 +12,7 @@ const  TodoItem = props=> {
     const crossOut = (id)=>{
         let crossed = document.querySelector(`#a${props.id}`)
         let crossedStyle =  crossed.style.textDecoration
-       crossedStyle == "line-through" ? crossed.style.textDecoration = "none":
+       crossedStyle === "line-through" ? crossed.style.textDecoration = "none":
        crossed.style.textDecoration = "line-through"
     }
     return (

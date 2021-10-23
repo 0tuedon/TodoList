@@ -12,8 +12,11 @@
   text-rendering: optimizeLegibility;
 }
 .center{
-  text-align: center;
-  font-size: large;
+  display: block;
+  text-align: justify;
+  overflow-wrap: break-word;
+  font-size: medium;
+ 
 }
 body {
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -172,6 +175,7 @@ h2 {
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px;
+  text-decoration: none;
   
 }
 
@@ -194,7 +198,7 @@ h2 {
 
 .groupTodos {
   display: flex;
-  align-content: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -246,13 +250,10 @@ h2 {
   left: 0;
 }
 
-
-@media only screen and (max-width:1025px){
-  [class*="actions"]{
-    text-align: left;
-  }
-  [class*="actions"]
+@media (max-width:525px){
+.actions
   {
+  text-align: left;
   cursor: pointer;
   width: 100%;
   border: none;
@@ -261,5 +262,43 @@ h2 {
   margin: 0 0 5px;
   padding: 10px;
   font-size: 15px;
+  }
+  .card-container {
+    margin: 1rem;
+    display: flex;
+    flex-basis: 60%;
+    justify-content: center;
+  }
+  .card {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 20rem;
+    margin-left: 1rem;
+  }
+  .groupTodos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .groupTodos .card {
+    margin: 1rem;
+    flex: 0 0 40%;
+  }
+  
+}
+
+@media (max-width:1000px){
+  .groupTodos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .groupTodos .card {
+    margin: 1rem;
+    flex: 0 0.6 40%;
   }
 }

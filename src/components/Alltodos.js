@@ -8,7 +8,7 @@ function AllTodos(props) {
     return (
         <div>
             <h1>Todo App</h1>
-            {TodoArray.length < 1  ? <p>You Have no Todos</p>:
+            {TodoArray.length < 1  ? <p className="center">You Have no Todos</p>:
             <TodoList
                 data={TodoArray}
                 delete={deleteTodo}
