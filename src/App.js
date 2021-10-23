@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AllTodos from "./components/Alltodos";
+import { TodosContextProvider } from "./components/context/TodosContext";
+import NavBar from "./components/layout/NavigationBar";
+import NewTodos from "./components/Newtodos";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+            <BrowserRouter>
+             <NavBar/>
+            <TodosContextProvider>
+              <Switch>
+                <Route path="/" exact={true}>
+                    <AllTodos />
+                </Route>
+                <Route path="/new">
+                    <NewTodos />
+                </Route>
+                </Switch>
+                </TodosContextProvider>
+            </BrowserRouter>
+    )
 }
-
 export default App;
